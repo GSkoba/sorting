@@ -6,9 +6,9 @@ import java.util.Comparator;
  * Created by Nechaev Mikhail
  * Since 14/11/2017.
  */
-public abstract class AbstractSortOnComparisons<T> implements Sort<T> {
+public abstract class AbstractSortOnComparisons<T> {
 
-    protected Comparator<? super T> comparator;
+    private Comparator<? super T> comparator;
 
     public AbstractSortOnComparisons() {
         /* empty */
@@ -21,6 +21,8 @@ public abstract class AbstractSortOnComparisons<T> implements Sort<T> {
     public void setComparator(Comparator<? super T> comparator) {
         this.comparator = comparator;
     }
+
+    public abstract void sort(T[] array);
 
     protected void swap(T[] array, int i, int j) {
         T t = array[i];
