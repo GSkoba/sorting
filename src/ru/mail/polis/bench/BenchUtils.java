@@ -12,14 +12,14 @@ import java.util.concurrent.TimeUnit;
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 @Warmup(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
-@Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
+@Measurement(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
 @Fork(1)
 public class BenchUtils {
     private AbstractSortOnComparisons<Integer> typeOfSortInteger;
     private AbstractSortOnComparisons<String> typeOfSortString;
     private Integer[]dataRandom, dataUnique, dataRepetative, dataSorted, dataMirror, dataAntiQS;
     private String[] stringRandom, stringEqLen, stringHW;
-    private int countOfElem = 1000;
+    private int countOfElem = 100000;
 
     public void setUpInvocation(AbstractSortOnComparisons<Integer> typeOfSortInteger, AbstractSortOnComparisons<String> typeOfSortString) {
         this.typeOfSortInteger = typeOfSortInteger;

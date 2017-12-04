@@ -14,34 +14,28 @@ public class QuickSort1<T> extends AbstractSortOnComparisons<T>{
 
     private  void sort(T[] array, int left, int right){
 
-        if(right-left < TRANSIT_TO_INSERT) insertSort(array);
-
+        if(right-left < TRANSIT_TO_INSERT) {
+            insertSort(array);
+            return;
+        }
         if (left > right) return;
 
-        int temp = left+random.nextInt(right-left+1);
-        T pivot = array[temp];
-        int b = left;
-        int j = left;
+        int idx = partition(array,left,right);
+        sort(array,left,idx);
+        sort(array,idx+1,right);
+    }
 
-        swap(array,left,temp);
-
-        for(int i=left+1; i<=right; i++){
-            if(lesser(array[i],pivot)){
-                swap(array,++j,i);
-            }else if(array[i]==pivot){
-                swap(array,i,j++);
-                swap(array,++b,j);
+    private int partition(T[] array, int left, int right) {
+        T p = array[left + random.nextInt(right - left + 1)];
+        int i = left, j = right;
+        while (i <= j) {
+            while (lesser(array[i],p)) i++;
+            while (greater(array[j],p)) j--;
+            if (i <= j) {
+                swap(array, i++, j--);
             }
         }
-
-        int del = j;
-
-        for(int i = left; i<=b; i++){
-            swap(array,i,j--);
-        }
-
-        sort(array,left,j);
-        sort(array,del+1,right);
+        return j;
     }
 
     public void insertSort(T[] a) {

@@ -47,6 +47,10 @@ public class SimpleString implements Numerical<SimpleString> {
         return length;
     }
 
+    @Override
+    public String toString(){
+        return data;
+    }
 
     @Override
     public int compareTo(SimpleString anotherSimpleString) {
