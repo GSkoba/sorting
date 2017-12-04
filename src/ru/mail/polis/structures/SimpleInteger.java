@@ -8,15 +8,25 @@ public class SimpleInteger implements Numerical<SimpleInteger> {
 
     private static final int DIGIT_COUNT = 10;
 
-//    private final todo data;
-//    private final int length;
+    public Integer getData() {
+        return data;
+    }
 
+    public void setData(Integer data) {
+        this.data = data;
+    }
+
+    Integer data;
+   // private final int length;
+    public SimpleInteger(){
+
+    }
     public SimpleInteger(Integer data) throws IllegalArgumentException {
         if (data == null) {
             throw new IllegalArgumentException("Source must be not null");
         }
-//        this.data = todo
-//        this.length = todo
+        this.data = data;
+        //  this.length = todo
     }
 
     @Override
@@ -27,7 +37,7 @@ public class SimpleInteger implements Numerical<SimpleInteger> {
             return 0;
         } else {
             //todo
-            return 0;
+            return 0;//data>>index & 1;
         }
     }
 
@@ -38,8 +48,7 @@ public class SimpleInteger implements Numerical<SimpleInteger> {
 
     @Override
     public int getDigitCount() {
-        //todo
-        return 0;
+        return Integer.SIZE/2;
     }
 
     @Override

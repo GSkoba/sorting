@@ -5,15 +5,8 @@ import java.lang.reflect.Array;
 
 import java.util.Comparator;
 
-public class LSD<T extends Numerical<T>> extends AbstractSortOnComparisons<T>{
+public class LSD<T extends Numerical> implements Sort<T>{
 
-    public LSD(){
-        super();
-    }
-
-    public LSD(Comparator<? super T> comparator){
-        super(comparator);
-    }
 
     @Override
     @SuppressWarnings("unchecked")

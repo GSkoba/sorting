@@ -2,11 +2,7 @@ package ru.mail.polis.sort;
 
 import ru.mail.polis.structures.IntKeyObject;
 
-public class CountingSort <T extends IntKeyObject> extends AbstractSortOnComparisons<T>{
-
-    public CountingSort() {
-        super();
-    }
+public class CountingSort <T extends IntKeyObject> implements Sort<T>{
 
     @Override
     @SuppressWarnings("unchecked")

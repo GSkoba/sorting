@@ -5,18 +5,18 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
-import ru.mail.polis.sort.QuickSort1;
+import ru.mail.polis.sort.QuickSort2;
 
-public class QuickSort1Bench extends BenchUtils {
+public class QuickSort2Bench extends BenchUtils {
 
     @Setup(value = Level.Trial)
     public void setUpTrial(){
-        setUpInvocation(new QuickSort1<Integer>(),new QuickSort1<String>());
+        setUpInvocation(new QuickSort2<Integer>(),new QuickSort2<String>());
     }
 
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
-                .include(QuickSort1Bench.class.getSimpleName())
+                .include(QuickSort2Bench.class.getSimpleName())
                 .build();
 
         new Runner(opt).run();

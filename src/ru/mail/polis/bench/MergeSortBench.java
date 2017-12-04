@@ -5,18 +5,18 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
-import ru.mail.polis.sort.QuickSort1;
+import ru.mail.polis.sort.MergeSort;
 
-public class QuickSort1Bench extends BenchUtils {
+public class MergeSortBench extends BenchUtils {
 
     @Setup(value = Level.Trial)
     public void setUpTrial(){
-        setUpInvocation(new QuickSort1<Integer>(),new QuickSort1<String>());
+        setUpInvocation(new MergeSort<Integer>(),new MergeSort<String>());
     }
 
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
-                .include(QuickSort1Bench.class.getSimpleName())
+                .include(MergeSortBench.class.getSimpleName())
                 .build();
 
         new Runner(opt).run();

@@ -8,14 +8,6 @@ public class QuickSort1<T> extends AbstractSortOnComparisons<T>{
     private static Random random = new Random();
     private final int TRANSIT_TO_INSERT = 15;
 
-    public QuickSort1(){
-        super();
-    }
-
-    public QuickSort1(Comparator<? super T> comparator){
-        super(comparator);
-    }
-
     public void sort(T[] array){
         sort(array,0,array.length-1);
     }
